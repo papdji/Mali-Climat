@@ -1,0 +1,64 @@
+
+<ion-content>
+
+  <ion-img src="./assets/logo.png"></ion-img>
+
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1>Bienvenu sur Mali Climat</h1>
+      <p>Connectez-vous pour continuer</p>
+    </div>
+
+    <!-- initiale-->
+    <form [formGroup]="credentialForm">
+
+      <div class="form-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">EMAIL</ion-label>
+          <ion-input
+            formControlName="email"
+            autofocus="true"
+            clearInput="true">
+          </ion-input>
+        </ion-item>
+      </div>
+
+      <!-- Message d'alerte de saisie incorrecte -->
+      <div *ngIf="(email.dirty || email.touched) && email.errors" class="errors">
+        <span *ngIf="email.errors?.required">Email est requis</span>
+        <span *ngIf="email.errors?.email">Email est invalide</span>
+      </div >
+
+      <div class="form-input">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Mot de passe</ion-label>
+          <ion-input
+            type="password"
+            formControlName="password"
+            clearInput="true">
+          </ion-input>
+        </ion-item>
+      </div>
+
+
+      <!-- Message d'alerte de saisie incorrecte -->
+      <div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
+        <span *ngIf="password.errors?.required">Mot de passe requis</span>
+        <span *ngIf="password.errors?.minlength">Le mot de passe doit comporter 6 caractères</span>
+      </div>
+    </form>
+
+    <div class="action-buttons ion-padding">
+      <ion-button size="large" class="login-button" (click)="signIn()">Se connecter</ion-button>
+      <p>Mot de passe oublier ?</p>
+      <ion-button class="signup-button" size="large" fill="outline" routerLink="/signup">S'inscrire</ion-button>
+    </div>
+
+    <ion-button (click)="signUp()" expand="full">S'inscrire</ion-button>
+    <ion-button (click)="signIn()" expand="full" color="secondary">Se connecter</ion-button>
+
+  </div>
+
+</ion-content>

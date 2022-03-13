@@ -1,0 +1,7 @@
+{
+  "name": "maliclimat",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
