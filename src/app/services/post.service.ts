@@ -139,11 +139,11 @@ export class PostService {
   updatePostLike(post: Post) {
     let tempLikesArray = [];
 
-    // Check if array exist
+    // Vérifier si le tableau existe
     if ( post.likes !== undefined && post.likes !== null ) {
       tempLikesArray = post.likes;
 
-      // Check if uid already exists in the array remove from array.
+      // Vérifier si uid existe déjà dans le tableau supprimer du tableau.
       if (tempLikesArray.includes(this.currentUser.uid)){
         const index = tempLikesArray.indexOf(this.currentUser.uid);
         tempLikesArray.splice(index, 1);

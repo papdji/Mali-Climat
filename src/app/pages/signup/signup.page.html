@@ -1,15 +1,16 @@
 
 <ion-content>
 
-  <ion-img src="./assets/azordev_logo.png"></ion-img>
+  <ion-img src="./assets/logo.png"></ion-img>
 
   <div class="login-section ion-padding">
     <div class="heading ion-padding">
-      <h1>Create new account...</h1>
-      <p>Please fill data select register</p>
+      <h5>Créer un nouveau compte</h5>
+      <strong>et devenez un acteur du climat</strong>
+      <p>Veuillez remplir les données sélectionner le registre</p>
     </div>
 
-    <!-- Codigo inicial -->
+    <!-- WebSombre -->
     <form [formGroup]="credentialForm">
 
       <div class="form-input">
@@ -24,11 +25,11 @@
         </ion-item>
       </div>
 
-      <!-- Mensagem de alerta para introdução incorrecta -->
-      <!--div *ngIf="(email.dirty || email.touched) && email.errors" class="errors">
-        <span *ngIf="email.errors?.required">Email is required</span>
-        <span *ngIf="email.errors?.email">Email is invalid</span>
-      </div-->
+      <!-- Message d'alerte de saisie incorrecte -->
+      <div *ngIf="(email.dirty || email.touched) && email.errors" class="errors">
+        <span *ngIf="email.errors?.required">Email requis</span>
+        <span *ngIf="email.errors?.email">Email invalide</span>
+      </div>
 
       <div class="form-input">
         <ion-icon name="lock-closed-outline"></ion-icon>
@@ -43,11 +44,11 @@
       </div>
 
 
-      <!-- Mensagem de alerta para introdução incorrecta -->
-      <!--div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
-        <span *ngIf="password.errors?.required">Password is required</span>
-        <span *ngIf="password.errors?.minlength">Password needs to be 6 characters</span>
-      </div-->
+      <!-- Message d'alerte de saisie incorrecte -->
+      <div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
+        <span *ngIf="password.errors?.required">Password requis</span>
+        <span *ngIf="password.errors?.minlength">Le mot de passe doit comporter 6 caractères</span>
+      </div>
       <div class="form-input">
         <ion-icon name="lock-closed-outline"></ion-icon>
         <ion-item>
@@ -61,15 +62,14 @@
       </div>
 
     </form>
-
+    <strong>En vous connectant vous acceptez <a class="sign-up-link" routerLink="/conditions">les conditions générales d'utilisation</a></strong>
     <div class="action-buttons ion-padding">
       <ion-button size="large" class="login-button" (click)="signUp()">S'inscrire</ion-button>
-      <ion-button class="signup-button" size="large" fill="outline" routerLink="/">Back to Sign In</ion-button>
+      <ion-button class="signup-button" size="large" routerLink="/login">Retour à la connexion</ion-button>
     </div>
 
     <!--ion-button (click)="signUp()" expand="full">Sign up</ion-button>
     <ion-button (click)="signIn()" expand="full" color="secondary">Sign in</ion-button-->
 
   </div>
-
 </ion-content>

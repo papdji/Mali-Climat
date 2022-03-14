@@ -8,7 +8,7 @@
     <div class="card">
       <div class="header">
         <div class="avatar">
-          <img [src]="currentUser.image" alt="">
+          <img [src]="currentUser.image" alt="pohoto profile">
         </div>
       </div>
 
@@ -28,19 +28,19 @@
             </ion-item>
 
             <ion-item>
-              <ion-label>Department</ion-label>
+              <ion-label>Profile</ion-label>
               <ion-select placeholder="Select One">
-                <ion-select-option value="p">Agriculteur</ion-select-option>
-                <ion-select-option value="q">Jardinier</ion-select-option>
-                <ion-select-option value="s">Acteur climat</ion-select-option>
+                <ion-select-option value="a">Agriculteur</ion-select-option>
+                <ion-select-option value="j">Jardinier</ion-select-option>
+                <ion-select-option value="ac">Acteur climat</ion-select-option>
                 <ion-select-option value="e">Environnementaliste</ion-select-option>
-                <ion-select-option value="m">Administration publique</ion-select-option>
+                <ion-select-option value="ad">Administration publique</ion-select-option>
               </ion-select>
             </ion-item>
 
             <ion-item>
-              <ion-label position="stacked">Rôle</ion-label>
-              <ion-input placeholder="Profile"></ion-input>
+              <ion-label position="stacked">Ville</ion-label>
+              <ion-input placeholder="lieu de residence"></ion-input>
             </ion-item>
 
             <ion-item>
@@ -48,7 +48,7 @@
               <ion-input placeholder="12345678"></ion-input>
             </ion-item>
 
-            <ion-list-header>App data</ion-list-header>
+            <ion-list-header>Autorisation</ion-list-header>
 
             <ion-item>
               <ion-label position="stacked">Autoriser les utilisateurs à m'appeler</ion-label>
@@ -56,7 +56,7 @@
             </ion-item>
           </ion-list>
 
-          <ion-button class="ion-margin" expand="block">
+          <ion-button class="ion-margin" expand="block" routerLink="/tabs">
             <ion-icon slot="start" name="save-outline"></ion-icon>
             Enregistrer
           </ion-button>

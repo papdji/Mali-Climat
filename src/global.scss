@@ -38,3 +38,54 @@
     height: 50%;
   }
 }
+.centerix {
+  text-align: center;
+}
+
+.width60 {
+  width: 60%;
+}
+
+.data {
+  margin-top: 20px;
+}
+
+
+.weather-card {
+  background-color: var(--weather-card);
+}
+
+
+
+
+.weather-content {
+  padding-left: 20px;
+  //   padding-top: 10px;
+  //   padding-bottom: 20px;
+}
+
+
+.weather-range {
+  margin-bottom: 1em;
+}
+
+.hourly-content {
+  width: 100vw;
+  float: left;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.hourly-time {
+  width: 80px;
+  float: left;
+
+}
+
+.hourly-degree {
+  width: 50%;
+  float: left;
+  padding-top: 30px;
+  font-size: 1.5rem
+}

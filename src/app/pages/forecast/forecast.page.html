@@ -6,9 +6,7 @@
     <ion-title *ngIf="data">{{ data.location.name }}</ion-title>
     <ion-title *ngIf="!data">Prévisions météorologiques</ion-title>
   </ion-toolbar>
-
 </ion-header>
-
 <ion-content [fullscreen]="true">
 
   <!-- <ion-breadcrumbs>
@@ -28,13 +26,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list *ngIf="error">
-    <ion-item>
-      <ion-text color="danger">
-        <h4>{{ error }}</h4>
-      </ion-text>
-    </ion-item>
-  </ion-list>
+
 
   <ion-item>
     <ion-label>Ville</ion-label>
@@ -64,8 +56,8 @@
     </div>
 
     <div *ngFor="let day of data.forecast.forecastday">
+      <ion-grid>
 
-      <ion-card class="weather-card" style="display: flexbox;">
 
         <div class="weather-header">
           <div class="weather-header-condition">
@@ -74,10 +66,12 @@
             {{ data.current.condition.text }}
           </div>
           <div class="weather-header2">
-            <div class="weather-header2-date" style="margin-left: 2em; font: 1.5em sans-serif;">{{ day.date | customDate
+            <div class="weather-header2-date" style="margin-left: 2em; font: 1.5em sans-serif;">{{ day.date |
+              customDate
               }}</div>
             <div class="weather-header2-degree"
-              style="padding-top: 2em; font: 1.5em sans-serif; padding-block-end: 20px; margin-left: 1em;"> Actuellement
+              style="padding-top: 2em; font: 1.5em sans-serif; padding-block-end: 20px; margin-left: 1em;">
+              Actuellement
               il fait {{ day.day.avgtemp_c }} ℃</div>
           </div>
         </div>
@@ -89,7 +83,8 @@
                 style="padding-left: 3em; padding-top: 2em; padding-right: 2em; font: 1.5em sans-serif;"></ion-icon>{{
               day.day.mintemp_c }} ℃ <p> T-max
                 <ion-icon name="thermometer"
-                  style="padding-left: 3em; padding-top: 2em; padding-right: 3em; font: 1.5em sans-serif;"></ion-icon>{{
+                  style="padding-left: 3em; padding-top: 2em; padding-right: 3em; font: 1.5em sans-serif;"></ion-icon>
+                {{
                 day.day.maxtemp_c }} ℃
               </p>
             </div>
@@ -100,7 +95,8 @@
             <div style="font-size: medium;">coucher<img src="../../assets/images/icons/coucher.png"
                 style="padding-left: 2em; padding-right: 2em; padding-top: 2em;">{{ day.astro.sunset }}</div>
             <div style="font-size: medium;">Visibilité <ion-icon name="eye-outline"
-                style="padding-left: 2em; padding-right: 2em; padding-top: 2em;"></ion-icon> {{ day.day.avgvis_km }} km
+                style="padding-left: 2em; padding-right: 2em; padding-top: 2em;"></ion-icon> {{ day.day.avgvis_km }}
+              km
             </div>
             <div style="font-size: medium;">Humid<img src="../../assets/images/icons/humid.png "
                 style="padding-left: 2em; padding-right: 2em; padding-top: 2em;"> {{ day.day.avghumidity }}%</div>
@@ -113,30 +109,29 @@
           </div>
         </div>
 
-        <ion-accordion-group>
-          <ion-accordion value="colors">
-            <ion-item slot="header">
-              <ion-label>Prévision horaire</ion-label>
-            </ion-item>
+      </ion-grid>
+      <ion-accordion-group>
+        <ion-accordion value="colors">
+          <ion-item slot="header">
+            <ion-label>Prévision horaire</ion-label>
+          </ion-item>
 
-            <ion-list slot="content">
-              <div *ngFor="let hour of day.hour">
-                <ion-item>
-                  <div class="hourly-content">
-                    <div class="hourly-time">
-                      {{ hour.time | date:'medium':'fr-FR' }} <img [src]="hour.condition.icon | safer: 'url'">
-                    </div>
-                    <div class="hourly-degree">
-                      {{ hour.temp_c }} ℃
-                    </div>
+          <ion-list slot="content">
+            <div *ngFor="let hour of day.hour">
+              <ion-item>
+                <div class="hourly-content">
+                  <div class="hourly-time">
+                    {{ hour.time | date:'medium':'fr-FR' }} <img [src]="hour.condition.icon | safer: 'url'">
                   </div>
-                </ion-item>
-              </div>
-            </ion-list>
-          </ion-accordion>
-        </ion-accordion-group>
-
-      </ion-card>
+                  <div class="hourly-degree">
+                    {{ hour.temp_c }} ℃
+                  </div>
+                </div>
+              </ion-item>
+            </div>
+          </ion-list>
+        </ion-accordion>
+      </ion-accordion-group>
 
     </div>
 

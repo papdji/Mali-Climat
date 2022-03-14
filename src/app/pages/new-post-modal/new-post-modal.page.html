@@ -2,7 +2,7 @@
   <ion-toolbar color="primary">
     <ion-title>Créer un nouveau message</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="dismissModal()">Close</ion-button>
+      <ion-button (click)="dismissModal()">Fermer</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -11,8 +11,8 @@
   <!-- Scrollable Segment -->
   <ion-list-header>Sélectionnez le type de poste</ion-list-header>
 
-  <ion-segment color="primary" value="assistance" (ionChange)="typePostChanged($event)" value="information">
-    <ion-segment-button value="request">
+  <ion-segment color="primary" value="conseil" (ionChange)="typePostChanged($event)" value="information">
+    <ion-segment-button value="conseil">
       <ion-label>Climat</ion-label>
       <ion-icon name="partly-sunny-outline" color="primary"></ion-icon>
     </ion-segment-button>
@@ -26,9 +26,9 @@
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Textarea with custom number of rows and cols -->
+  <!-- Textarea avec un nombre personnalisé de lignes et de colonnes -->
 <ion-item>
-  <ion-textarea rows="6" cols="20" [(ngModel)]="newPostMsg" placeholder="Enter more information to post here..."></ion-textarea>
+  <ion-textarea rows="6" cols="20" [(ngModel)]="newPostMsg" placeholder="Entrez plus d'informations pour publier ici..."></ion-textarea>
 </ion-item>
 
 <ion-button expand="block" [disabled]="newPostMsg === ''" (click)="addNewPost()">Publier pour alimenter</ion-button>

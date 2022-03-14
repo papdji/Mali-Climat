@@ -74,7 +74,7 @@ export class ChatService {
     for (const usr of users) {
       if (usr.uid === msgFromId) {
         if ( usr.image === 'notdefined' ) {
-          usr.image = 'assets/undraw_male_avatar_323b.svg';
+          usr.image = 'https://firebasestorage.googleapis.com/v0/b/ionfire-d0376.appspot.com/o/images%2Fundraw_male_avatar_323b.svg?alt=media&token=ff526de6-d95c-4bcf-ab85-d9b45e454061';
         }
         return usr;
       }

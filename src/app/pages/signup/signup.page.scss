@@ -1,9 +1,9 @@
 ion-content {
-    --background: linear-gradient(0deg, rgba(0,0,0,0.7),  rgba(0,0,0,0.1)),
-    url("/assets/background.jpeg") no-repeat center center / cover;
+    --background: linear-gradient(0deg, rgba(0, 0, 0, 0.151),  rgba(255, 255, 255, 0.1)),
+    url("https://firebasestorage.googleapis.com/v0/b/ionfire-d0376.appspot.com/o/images%2Fbackground.jpg?alt=media&token=ad5bace5-c863-4b07-833b-3729c14a4301") no-repeat center center / cover;
 }
 
-/*
+
 .errors {
     font-size: small;
     color: #fff;
@@ -12,15 +12,15 @@ ion-content {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-*/
+
 
 ion-img {
-    width: 75%;
+    width: 35%;
     float: right;
 }
 
 .login-section {
-    height: 80vh;
+    height: 90vh;
     width: 100%;
     max-width: 500px;
     background: #fff;
@@ -36,15 +36,17 @@ ion-img {
     .heading {
         margin-top: 10px;
 
-        h1 {
+        h5 {
             font-size: 1.6rem;
             font-weight: bolder;
+            color: #010435;
         }
         p {
             margin-top: 20px;
             font-size: 1rem;
             color: #7b7b7b;
         }
+
     }
     .login-form {
         .form-input {
@@ -79,7 +81,7 @@ ion-img {
     .action-buttons {
         text-align: center;
         .login-button {
-            --background: #f9b801;
+            --background: #00ad42;
             width: 100%;
             font-weight: bold;
         }
@@ -89,8 +91,8 @@ ion-img {
             color: #7b7b7b;
         }
         .signup-button {
-            --border-color: #b4b4b4;
-            --color: #000000;
+            --border-color: #040fa0;
+            --color: #ffffff;
             font-weight: bold;
             margin-top: 3px;
             width: 100%;

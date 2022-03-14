@@ -39,7 +39,27 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },  {
+    path: 'abouts',
+    loadChildren: () => import('./pages/abouts/abouts.module').then( m => m.AboutsPageModule)
+  },
+  {
+    path: 'conditions',
+    loadChildren: () => import('./pages/conditions/conditions.module').then( m => m.ConditionsPageModule)
+  },
+  {
+    path: 'confidentialites',
+    loadChildren: () => import('./pages/confidentialites/confidentialites.module').then( m => m.ConfidentialitesPageModule)
+  },
+  {
+    path: 'alertes',
+    loadChildren: () => import('./pages/alertes/alertes.module').then( m => m.AlertesPageModule)
+  },
+  {
+    path: 'localites',
+    loadChildren: () => import('./pages/localites/localites.module').then( m => m.LocalitesPageModule)
   }
+
 
 
 ];

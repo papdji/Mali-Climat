@@ -33,7 +33,7 @@
     <ion-grid>
       <ion-row class="btnRow ion-align-items-center">
 
-        <ion-chip *ngIf="post.type==='request'" size="small">
+        <ion-chip *ngIf="post.type==='conseil'" size="small">
           <ion-icon name="partly-sunny-outline" color="primary"></ion-icon>
           <ion-label>Conseil Climat</ion-label>
         </ion-chip>
@@ -103,15 +103,15 @@
       <ion-row class="btnRow">
 
         <ion-col size="4" class="ion-align-self-center">
-          <ion-button [disabled] = "true" color="secondary"><ion-icon name="call-outline" slot="icon-only"></ion-icon></ion-button>
+          <ion-button fill="clear" [disabled] = "true" color="secondary"><ion-icon name="call-outline" slot="icon-only"></ion-icon></ion-button>
         </ion-col>
 
         <ion-col size="4" class="ion-align-self-center">
-          <ion-button (click)="toggleViewComments()" color="secondary"><ion-icon name="chatbox-ellipses-outline" slot="icon-only"></ion-icon></ion-button>
+          <ion-button (click)="toggleViewComments()" color="success"><ion-icon name="chatbox-ellipses-outline" slot="icon-only"></ion-icon></ion-button>
         </ion-col>
 
         <ion-col size="4" class="ion-align-self-center">
-          <ion-button (click)="togglePostLiked()" color="secondary"><ion-icon [ngClass]="{'liked' : post.userLikes}" [name]="post.userLikes === true ? 'heart' : 'heart-outline'" slot="icon-only"></ion-icon></ion-button>
+          <ion-button fill="clear" (click)="togglePostLiked()" color="primary"><ion-icon [ngClass]="{'liked' : post.userLikes}" [name]="post.userLikes === true ? 'heart' : 'heart-outline'" slot="icon-only"></ion-icon></ion-button>
         </ion-col>
 
       </ion-row>

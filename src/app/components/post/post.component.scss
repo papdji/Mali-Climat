@@ -1,6 +1,8 @@
-
+ion-content{
+  background-color: rgb(28, 7, 216);
+}
 ion-card {
-    background-color: #a8d1ff;
+    background-color: #eef4fc;
   }
 
 .commentsarea {
@@ -45,7 +47,7 @@ ion-img {
   width: 100%;
   border: 1px solid var(--ion-color-medium);
   border-radius: 35px;
-  background-color: #fff;
+  background-color: rgb(123, 136, 255);
   resize: none;
   margin-top: 0px;
   --padding-start: 8px;

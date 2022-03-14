@@ -16,8 +16,8 @@ const routes: Routes = [
         loadChildren: () => import('../chat/chat.module').then(m => m.ChatPageModule)
       },
       {
-        path: 'files',
-        loadChildren: () => import('../files/files.module').then(m => m.FilesPageModule)
+        path: 'alertes',
+        loadChildren: () => import('../alertes/alertes.module').then(m => m.AlertesPageModule)
       },
       {
         path: 'current',

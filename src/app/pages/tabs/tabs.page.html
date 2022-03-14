@@ -3,7 +3,7 @@
     <ion-buttons slot="secondary">
 
       <ion-button>
-        <ion-icon slot="end" name="person-circle" routerLink="/settings"></ion-icon>
+        <ion-icon slot="end" name="notifications-outline" routerLink="/settings"></ion-icon>
       </ion-button>
 
       <!--ion-button>
@@ -36,11 +36,6 @@
       <ion-label>Chat</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="files">
-      <ion-icon [name]="selected == 'files' ? 'folder' : 'folder-outline'"></ion-icon>
-      <ion-label>Files</ion-label>
-    </ion-tab-button>
-
     <ion-tab-button tab="current">
       <ion-icon [name]="selected == 'current' ? 'water' : 'water-outline'"></ion-icon>
       <ion-label>Météo</ion-label>
@@ -51,6 +46,10 @@
       <ion-label>Prévision</ion-label>
     </ion-tab-button>
 
+    <ion-tab-button tab="alertes">
+      <ion-icon [name]="selected == 'alertes' ? 'notifications' : 'notifications-outline'"></ion-icon>
+      <ion-label>Alertes</ion-label>
+    </ion-tab-button>
   </ion-tab-bar>
 
 </ion-tabs>

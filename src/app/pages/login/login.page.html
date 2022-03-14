@@ -49,15 +49,15 @@
         <span *ngIf="password.errors?.minlength">Le mot de passe doit comporter 6 caractères</span>
       </div>
     </form>
-
-    <div class="action-buttons ion-padding">
-      <ion-button size="large" class="login-button" (click)="signIn()">Se connecter</ion-button>
+    <strong>En vous connectant vous acceptez <a class="sign-up-link" routerLink="/conditions">les conditions générales d'utilisation</a></strong>
+    <div class="action-buttons">
+      <ion-button size="medium" class="login-button" (click)="signIn()">Se connecter</ion-button>
+      <ion-button class="signup-button" size="medium" fill="outline" routerLink="/signup">S'inscrire</ion-button>
       <p>Mot de passe oublier ?</p>
-      <ion-button class="signup-button" size="large" fill="outline" routerLink="/signup">S'inscrire</ion-button>
     </div>
 
-    <ion-button (click)="signUp()" expand="full">S'inscrire</ion-button>
-    <ion-button (click)="signIn()" expand="full" color="secondary">Se connecter</ion-button>
+    <!-- <ion-button (click)="signUp()" expand="full">S'inscrire</ion-button>
+    <ion-button (click)="signIn()" expand="full" color="secondary">Se connecter</ion-button> -->
 
   </div>
 

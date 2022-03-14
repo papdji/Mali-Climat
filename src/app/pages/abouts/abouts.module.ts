@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
-import { NewPostModalPageRoutingModule } from './new-post-modal-routing.module';
-import { NewPostModalPage } from './new-post-modal.page';
+
+import { AboutsPageRoutingModule } from './abouts-routing.module';
+
+import { AboutsPage } from './abouts.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    NewPostModalPageRoutingModule
+    AboutsPageRoutingModule
   ],
-  declarations: [NewPostModalPage]
+  declarations: [AboutsPage]
 })
-export class NewPostModalPageModule {}
+export class AboutsPageModule {}
