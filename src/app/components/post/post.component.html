@@ -22,11 +22,7 @@
             </ion-text>
           </ion-row>
         </ion-col>
-        <ion-row class="ion-padding">
-          <ion-text color="primary" class="post-message">
-            {{ post.msg }}
-          </ion-text>
-        </ion-row>
+
       </ion-row>
     </ion-grid>
 
@@ -46,19 +42,25 @@
           <ion-label>Question</ion-label>
         </ion-chip>
 
-        <ion-col size="6" class="ion-align-self-center">
-          <ion-chip *ngIf="(post.comments$ | async)?.length>=0" size="small">
-            <ion-icon name="chatbox-ellipses-outline" color="success"></ion-icon>
-            <ion-label>{{ post.countComments }} Commenter</ion-label>
-          </ion-chip>
-        </ion-col>
+        <ion-row class="ion-padding">
+          <ion-text color="primary" class="post-message">
+            {{ post.msg }}
+          </ion-text>
+        </ion-row>
 
         <ion-col size="6" class="ion-align-self-center">
           <ion-chip *ngIf="post.countLikes >= 0" size="small">
             <ion-icon name="heart-outline" color="danger"></ion-icon>
             <ion-label>{{ post.countLikes }} Aimer</ion-label>
           </ion-chip>
-      </ion-col>
+        </ion-col>
+
+        <ion-col size="6" class="ion-align-self-center">
+          <ion-chip *ngIf="(post.comments$ | async)?.length>=0" size="small">
+            <ion-icon name="chatbox-ellipses-outline" color="success"></ion-icon>
+            <ion-label>{{ post.countComments }} Réponse</ion-label>
+          </ion-chip>
+        </ion-col>
 
       </ion-row>
     </ion-grid>
@@ -70,11 +72,13 @@
 
       <ion-row class="ion-align-items-center">
         <ion-col size="9">
-          <ion-textarea autoGrow="true" class="comment-input" rows="1" maxLenght="10000" [(ngModel)]="newMsg" placeholder="Ajoutez votre commentaire ici...">
+          <ion-textarea autoGrow="true" class="comment-input" rows="1" maxLenght="10000" [(ngModel)]="newMsg"
+            placeholder="Ajoutez votre commentaire ici...">
           </ion-textarea>
         </ion-col>
         <ion-col size="3">
-          <ion-button expand="block" fill="clear" color="primary" [disabled]="newMsg === ''" class="msg-btn" (click)="addPostComment()">
+          <ion-button expand="block" fill="clear" color="primary" [disabled]="newMsg === ''" class="msg-btn"
+            (click)="addPostComment()">
             <ion-icon class="sendCommentBtn" name="send" slot="icon-only"></ion-icon>
           </ion-button>
         </ion-col>
@@ -83,14 +87,17 @@
       <div *ngFor="let comment of post.comments">
         <ion-item color="light">
 
-            <ion-col size="10" class="align-items-stretch">
-              <ion-row class="align-items-stretch">
-                <ion-text color="secondary">{{comment.fromName}} . <span class="timestamp">{{ comment.createdAt?.toMillis() | date:'short' }}</span></ion-text>
-              </ion-row>
-              <ion-row class="align-items-stretch">
-                <ion-text color="dark"><p>{{comment.msg}}</p></ion-text>
-              </ion-row>
-            </ion-col>
+          <ion-col size="10" class="align-items-stretch">
+            <ion-row class="align-items-stretch">
+              <ion-text color="secondary">{{comment.fromName}} . <span class="timestamp">{{
+                  comment.createdAt?.toMillis() | date:'short' }}</span></ion-text>
+            </ion-row>
+            <ion-row class="align-items-stretch">
+              <ion-text color="dark">
+                <p>{{comment.msg}}</p>
+              </ion-text>
+            </ion-row>
+          </ion-col>
 
         </ion-item>
       </div>
@@ -102,16 +109,22 @@
 
       <ion-row class="btnRow">
 
+
         <ion-col size="4" class="ion-align-self-center">
-          <ion-button fill="clear" [disabled] = "true" color="secondary"><ion-icon name="call-outline" slot="icon-only"></ion-icon></ion-button>
+          <ion-button fill="clear" (click)="togglePostLiked()" color="primary">
+            <ion-icon [ngClass]="{'liked' : post.userLikes}"
+              [name]="post.userLikes === true ? 'heart' : 'heart-outline'" slot="icon-only"></ion-icon>
+          </ion-button>
         </ion-col>
 
         <ion-col size="4" class="ion-align-self-center">
-          <ion-button (click)="toggleViewComments()" color="success"><ion-icon name="chatbox-ellipses-outline" slot="icon-only"></ion-icon></ion-button>
+          <!-- <ion-button fill="clear" [disabled] = "true" color="secondary"><ion-icon name="call-outline" slot="icon-only"></ion-icon></ion-button> -->
         </ion-col>
 
         <ion-col size="4" class="ion-align-self-center">
-          <ion-button fill="clear" (click)="togglePostLiked()" color="primary"><ion-icon [ngClass]="{'liked' : post.userLikes}" [name]="post.userLikes === true ? 'heart' : 'heart-outline'" slot="icon-only"></ion-icon></ion-button>
+          <ion-button (click)="toggleViewComments()" color="success">
+            <ion-icon name="chatbox-ellipses-outline" slot="icon-only"></ion-icon>
+          </ion-button>
         </ion-col>
 
       </ion-row>

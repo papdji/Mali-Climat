@@ -34,23 +34,23 @@ export class SignupPage implements OnInit {
     await loading.present();
 
     if ( this.password.value !== this.confirmpassword.value ){
-      console.log('Error: Passwords does not match!');
+      console.log('Error: Les mots de passe ne correspondent pas !');
       loading.dismiss();
       const alert = await this.alertController.create({
-        header: 'Sign up failed',
-        message: 'Error: Passwords does not match!',
+        header: 'inscription a échoué',
+        message: 'Error: Les mots de passe ne correspondent pas !',
         buttons: ['OK'],
       });
       await alert.present();
     } else {
       this.authService.signUp(this.credentialForm.value).then(user => {
         loading.dismiss();
-        // replaced URL faz com que o utilizador não possa retroceder no Android
+        // l'URL remplacée empêche l'utilisateur de revenir en arrière sur Android
         this.router.navigateByUrl('/tabs/feed', { replaceUrl: true });
       }, async err => {
         loading.dismiss();
         const alert = await this.alertController.create({
-          header: 'Sign up failed',
+          header: 'Inscription a échoué',
           message: err.message,
           buttons: ['OK'],
         });
@@ -59,7 +59,7 @@ export class SignupPage implements OnInit {
     }
   }
 
-  // aceder aos valores da form para poder validar
+  // accéder aux valeurs du formulaire pour pouvoir valider
   get email() {
     return this.credentialForm.get('email');
   }

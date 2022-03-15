@@ -1,3 +1,8 @@
+ion-content {
+  --background: linear-gradient(0deg, rgba(0, 0, 0, 0),  rgba(0, 0, 0, 0)),
+  url("https://firebasestorage.googleapis.com/v0/b/ionfire-d0376.appspot.com/o/images%2Fbackground.jpg?alt=media&token=ad5bace5-c863-4b07-833b-3729c14a4301") no-repeat center center / cover;
+}
+
 .message-input {
     width: 100%;
     border: 1px solid var(--ion-color-medium);
@@ -34,18 +39,18 @@
 }
 
 .other-message {
-    background: #189ab442;
+    background: #062af881;
 
     .color-white {
-        color: #189ab4c4;
+        color: #ffffffc4;
     }
 
     .color-secondary {
-        color: var(--ion-color-secondary);
+      color: #D4F1F4;
     }
 
     .time {
-        color: #189ab4;
+        color: #ffffff;
         float: right;
         font-size: small;
     }

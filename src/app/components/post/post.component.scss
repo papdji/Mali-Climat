@@ -1,12 +1,14 @@
-ion-content{
-  background-color: rgb(28, 7, 216);
+ion-content {
+  --background: linear-gradient(0deg, rgba(0, 0, 0, 0),  rgba(0, 0, 0, 0)),
+  url("https://firebasestorage.googleapis.com/v0/b/ionfire-d0376.appspot.com/o/images%2Fbackground.jpg?alt=media&token=ad5bace5-c863-4b07-833b-3729c14a4301") no-repeat center center / cover;
 }
+
 ion-card {
     background-color: #eef4fc;
   }
 
 .commentsarea {
-  background-color: #65a5ee !important;
+  background-color: #d1e6fd !important;
 
 }
 
@@ -47,7 +49,7 @@ ion-img {
   width: 100%;
   border: 1px solid var(--ion-color-medium);
   border-radius: 35px;
-  background-color: rgb(123, 136, 255);
+  background-color: rgb(228, 229, 247);
   resize: none;
   margin-top: 0px;
   --padding-start: 8px;

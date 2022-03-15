@@ -13,6 +13,7 @@ export class ForecastPage implements OnInit {
   data: ForecastWeather;
   error: string;
   ville : string = "bamako";
+  public show: boolean = false;
   // weatherForm = this.formBuilder.group({ cityName: ['', [Validators.required, Validators.minLength(2)]] });
 
   constructor(private api: APIService) { }

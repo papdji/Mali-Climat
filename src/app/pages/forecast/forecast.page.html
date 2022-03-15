@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -22,21 +22,21 @@
 
   <ion-header collapse="condense" *ngIf="data">
     <ion-toolbar>
-      <ion-title size="large">{{ data.location.country }} / {{ data.location.name }}</ion-title>
+      <ion-title style="font-size: 15px;">Mali / {{ ville}}</ion-title>
     </ion-toolbar>
   </ion-header>
 
 
 
   <ion-item>
-    <ion-label>Ville</ion-label>
+    <ion-label>Choissez la localité</ion-label>
     <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" [(ngModel)]="ville"
       (ionChange)="onSubmit()">
       <ion-select-option value="Bamako">Bamako</ion-select-option>
       <ion-select-option value="Kayes">Kayes</ion-select-option>
       <ion-select-option value="Koulikoro">Koulikoro</ion-select-option>
       <ion-select-option value="Sikasso">Sikasso</ion-select-option>
-      <ion-select-option value="Segou">Segou</ion-select-option>
+      <ion-select-option value="Segou">Ségou</ion-select-option>
       <ion-select-option value="Mopti">Mopti</ion-select-option>
       <ion-select-option value="Tombouctou">Tombouctou</ion-select-option>
       <ion-select-option value="Goa">Goa</ion-select-option>
@@ -113,10 +113,10 @@
       <ion-accordion-group>
         <ion-accordion value="colors">
           <ion-item slot="header">
-            <ion-label>Prévision horaire</ion-label>
+            <ion-label (click)="show = !show">Prévision horaire</ion-label>
           </ion-item>
 
-          <ion-list slot="content">
+          <ion-list slot="content" *ngIf="show">
             <div *ngFor="let hour of day.hour">
               <ion-item>
                 <div class="hourly-content">

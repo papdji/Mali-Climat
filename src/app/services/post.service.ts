@@ -81,10 +81,10 @@ export class PostService {
           m.from = this.getUserProfile(m.from, users).name;
           m.userProfile = this.getUserProfile(m.from, users);
 
-          // check if likes array exist
+          // vérifier si le tableau likes existe
           if ( m.likes !== undefined && m.likes !== null ) {
             m.countLikes = m.likes.length;
-            // check if uder uid is in the array of likes
+            // vérifier si l'utilisateur uid est dans le tableau des likes
             if (m.likes.includes(this.currentUser.uid)) {
               m.userLikes = true;
             } else {
