@@ -5,7 +5,6 @@ import { AlertController, LoadingController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { ChatService } from 'src/app/services/chat.service';
 
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -38,7 +37,7 @@ export class SignupPage implements OnInit {
       loading.dismiss();
       const alert = await this.alertController.create({
         header: 'inscription a échoué',
-        message: 'Error: Les mots de passe ne correspondent pas !',
+        message: 'Erreur: Les mots de passe ne correspondent pas !',
         buttons: ['OK'],
       });
       await alert.present();
@@ -50,8 +49,8 @@ export class SignupPage implements OnInit {
       }, async err => {
         loading.dismiss();
         const alert = await this.alertController.create({
-          header: 'Inscription a échoué',
-          message: err.message,
+          header: 'Inscription a échoué.',
+          message: 'email ou mot de passe incorrecte.',
           buttons: ['OK'],
         });
         await alert.present();

@@ -22,6 +22,7 @@ export class PopoverComponent implements OnInit {
     this.authService.signOut().then(() => {
       // Attendez la résolution de la promesse pour accéder à la page de connexion
       this.popoverController.dismiss();
+      localStorage.removeItem("user");
       this.router.navigateByUrl('/', { replaceUrl: true });
     });
   }

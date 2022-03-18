@@ -1,7 +1,7 @@
-ion-content {
-    --background: linear-gradient(0deg, rgba(0, 0, 0, 0.151),  rgba(255, 255, 255, 0.1)),
-    url("https://firebasestorage.googleapis.com/v0/b/ionfire-d0376.appspot.com/o/images%2Fbackground.jpg?alt=media&token=ad5bace5-c863-4b07-833b-3729c14a4301") no-repeat center center / cover;
-}
+// ion-content {
+//     --background: linear-gradient(0deg, rgba(0, 0, 0, 0.151),  rgba(255, 255, 255, 0.1)),
+//     url("https://firebasestorage.googleapis.com/v0/b/ionfire-d0376.appspot.com/o/images%2Fbackground.jpg?alt=media&token=ad5bace5-c863-4b07-833b-3729c14a4301") no-repeat center center / cover;
+// }
 
 
 .errors {
@@ -15,15 +15,15 @@ ion-content {
 
 
 ion-img {
-    width: 35%;
+    width: 45%;
     float: right;
 }
 
 .login-section {
-    height: 90vh;
+    height: 85vh;
     width: 100%;
     max-width: 500px;
-    background: #fff;
+    background: rgb(185, 182, 182);
     right: 0;
     left: 0;
     bottom: 0;
@@ -91,11 +91,12 @@ ion-img {
             color: #7b7b7b;
         }
         .signup-button {
-            --border-color: #040fa0;
-            --color: #ffffff;
-            font-weight: bold;
-            margin-top: 3px;
-            width: 100%;
+          --border-color: #040835;
+          --background: var(--ion-color-primary);
+          --color: #ffffff;
+          font-weight: bold;
+          margin-top: 1px;
+          width: 100%;
         }
     }
 }

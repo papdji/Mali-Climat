@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { ModalController } from '@ionic/angular';
 import { IonContent } from '@ionic/angular';
 import { Observable } from 'rxjs';
@@ -11,10 +13,27 @@ import { PostService, Post } from 'src/app/services/post.service';
   styleUrls: ['./feed.page.scss'],
 })
 export class FeedPage implements OnInit {
-
+  private userUid:any;
+  private userData:any;
+  public currentUser: boolean = false;
   posts: Observable<Post[]>;
 
-  constructor(public modalController: ModalController, private postService: PostService) { }
+  constructor(public modalController: ModalController, private postService: PostService,
+    private auth: AngularFireAuth, private db: AngularFirestore) {
+      this.auth.authState.subscribe(user=>{
+        this.userUid = user.uid;
+        console.log(this.userUid);
+        this.db.collection("users").doc(this.userUid).valueChanges().subscribe(data=>{
+
+          this.userData = data;
+          console.log(data);
+          if(this.userData.profile == "Admin"){
+            this.currentUser = true;
+          }
+        })
+
+      });
+     }
 
   ngOnInit() {
     this.posts = this.postService.getPostMessage();

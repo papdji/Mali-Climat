@@ -29,7 +29,7 @@
 
 
   <ion-item>
-    <ion-label>Choissez la localité</ion-label>
+    <ion-label>Choisissez la localité</ion-label>
     <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" [(ngModel)]="ville"
       (ionChange)="onSubmit()">
       <ion-select-option value="Bamako">Bamako</ion-select-option>
@@ -71,8 +71,7 @@
               }}</div>
             <div class="weather-header2-degree"
               style="padding-top: 2em; font: 1.5em sans-serif; padding-block-end: 20px; margin-left: 1em;">
-              Actuellement
-              il fait {{ day.day.avgtemp_c }} ℃</div>
+              Actuellement il fait {{ day.day.avgtemp_c }} ℃</div>
           </div>
         </div>
 
@@ -80,10 +79,10 @@
           <div class="weather-details" style="width: 100%;">
             <div class="weather-range">T-mini
               <ion-icon name="thermometer"
-                style="padding-left: 3em; padding-top: 2em; padding-right: 2em; font: 1.5em sans-serif;"></ion-icon>{{
+                style="padding-left: 2em; padding-top: 2em; padding-right: 2em; font: 1.5em sans-serif;"></ion-icon>{{
               day.day.mintemp_c }} ℃ <p> T-max
                 <ion-icon name="thermometer"
-                  style="padding-left: 3em; padding-top: 2em; padding-right: 3em; font: 1.5em sans-serif;"></ion-icon>
+                  style="padding-left: 2em; padding-top: 2em; padding-right: 2em; font: 1.5em sans-serif;"></ion-icon>
                 {{
                 day.day.maxtemp_c }} ℃
               </p>

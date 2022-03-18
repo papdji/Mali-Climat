@@ -1,11 +1,11 @@
 @-webkit-keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
-.container{
-  -webkit-animation:rotate-center 2s ease-in-out both; animation:rotate-center 2s ease-in-out both;
-  img{
-    height: 190px;
-    margin-top: 10%;
-  }
-}
+// .container{
+//   -webkit-animation:rotate-center 2s ease-in-out both; animation:rotate-center 2s ease-in-out both;
+//   img{
+//     height: 190px;
+//     margin-top: 10%;
+//   }
+// }
 ion-content {
   --background: none;
   background-image: url('https://firebasestorage.googleapis.com/v0/b/ionfire-d0376.appspot.com/o/localites%2Fnuage.gif?alt=media&token=7632c20d-2ef7-4910-813d-aa527e785459');

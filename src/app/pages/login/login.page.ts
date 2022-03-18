@@ -33,12 +33,12 @@ export class LoginPage implements OnInit {
 
     this.authService.signUp(this.credentialForm.value).then(user => {
       loading.dismiss();
-      // replaced URL faz com que o utilizador não possa retroceder no Android
+      // l'URL remplacée empêche l'utilisateur de revenir en arrière sur Android
       this.router.navigateByUrl('/tabs/feed', { replaceUrl: true });
     }, async err => {
       loading.dismiss();
       const alert = await this.alertController.create({
-        header: 'Sign up failed',
+        header: "L'inscription a échoué.",
         message: err.message,
         buttons: ['OK'],
       });
@@ -53,13 +53,13 @@ export class LoginPage implements OnInit {
 
     this.authService.signIn(this.credentialForm.value).then(user => {
       loading.dismiss();
-      // replaced URL faz com que o utilizador não possa retroceder no Android
+      // l'URL remplacée empêche l'utilisateur de revenir en arrière sur Android
       this.router.navigateByUrl('/tabs/feed', { replaceUrl: true });
     }, async err => {
       loading.dismiss();
       const alert = await this.alertController.create({
-        header: 'Sign in failed',
-        message: err.message,
+        header: 'La connexion a échoué',
+        message: 'Email ou mot de passe vide.',
         buttons: ['OK'],
       });
 
@@ -67,7 +67,7 @@ export class LoginPage implements OnInit {
     });
   }
 
-  // aceder aos valors da form para poder validar
+  // accéder aux valeurs du formulaire pour pouvoir valider
   get email() {
     return this.credentialForm.get('email');
   }

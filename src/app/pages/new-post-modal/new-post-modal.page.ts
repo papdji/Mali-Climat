@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { PostService, Post } from 'src/app/services/post.service';
+import { PostService } from 'src/app/services/post.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-new-post-modal',
@@ -11,9 +12,23 @@ export class NewPostModalPage implements OnInit {
   typeOfPost = 'information';
   newPostMsg = '';
 
-  constructor(public modalController: ModalController, private postService: PostService) { }
+  constructor(
+    public modalController: ModalController,
+    private postService: PostService,
+    private afs: AngularFirestore
+  ) { }
 
   ngOnInit() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log('local storage : ', user);
+    console.log(user.uid);
+
+    this.afs.collection('users').doc(user.uid).valueChanges().subscribe(data=>{
+      console.log(data);
+
+    })
+
+
   }
 
   dismissModal() {

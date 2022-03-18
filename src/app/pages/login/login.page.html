@@ -5,7 +5,6 @@
 
   <div class="login-section ion-padding">
     <div class="heading ion-padding">
-      <h1>Bienvenu sur Mali Climat</h1>
       <p>Connectez-vous pour continuer</p>
     </div>
 
@@ -15,10 +14,10 @@
       <div class="form-input">
         <ion-icon name="mail-outline"></ion-icon>
         <ion-item>
-          <ion-label position="floating">EMAIL</ion-label>
+          <ion-label position="floating">Email</ion-label>
           <ion-input
             formControlName="email"
-            autofocus="true"
+            autofocus="false"
             clearInput="true">
           </ion-input>
         </ion-item>
@@ -49,7 +48,7 @@
         <span *ngIf="password.errors?.minlength">Le mot de passe doit comporter 6 caractères</span>
       </div>
     </form>
-    <strong>En vous connectant vous acceptez <a class="sign-up-link" routerLink="/conditions">les conditions générales d'utilisation</a></strong>
+    <!-- <ion-icon name="create"><a class="sign-up-link" routerLink="/conditions"></a></ion-icon> -->
     <div class="action-buttons">
       <ion-button size="medium" class="login-button" (click)="signIn()">Se connecter</ion-button>
       <ion-button class="signup-button" size="medium" fill="outline" routerLink="/signup">S'inscrire</ion-button>

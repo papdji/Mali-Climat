@@ -23,6 +23,7 @@ export class AuthService {
     this.afAuth.onAuthStateChanged(user => {
       console.log('Changed: ', user);
       this.currentUser = user;
+      localStorage.setItem("user", JSON.stringify(this.currentUser));
     });
   }
 
@@ -38,6 +39,7 @@ export class AuthService {
       `users/${uid}`
       ).set({
         uid,
+        profile:"utilisateur",
         email: credential.user.email,
         name: credential.user.email.split('@')[0],
         image: 'notdefined'
@@ -45,7 +47,9 @@ export class AuthService {
   }
 
   signIn({ email, password}) {
-    return this.afAuth.signInWithEmailAndPassword(email, password);
+    return this.afAuth.signInWithEmailAndPassword(email, password).then(
+
+    );
   }
 
   signOut() {

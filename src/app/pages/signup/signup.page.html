@@ -1,13 +1,11 @@
-
 <ion-content>
 
   <ion-img src="./assets/logo.png"></ion-img>
 
   <div class="login-section ion-padding">
-    <div class="heading ion-padding">
-      <h5>Créer un nouveau compte</h5>
-      <strong>et devenez un acteur du climat</strong>
-      <p>Veuillez remplir les données sélectionner le registre</p>
+    <div class="header">
+      <h6>Créer un nouveau compte</h6>
+      <p>et devenez un acteur du climat</p>
     </div>
 
     <!-- WebSombre -->
@@ -16,11 +14,8 @@
       <div class="form-input">
         <ion-icon name="mail-outline"></ion-icon>
         <ion-item>
-          <ion-label position="floating">EMAIL</ion-label>
-          <ion-input
-            formControlName="email"
-            autofocus="true"
-            clearInput="true">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email" autofocus="false" clearInput="true">
           </ion-input>
         </ion-item>
       </div>
@@ -30,15 +25,23 @@
         <span *ngIf="email.errors?.required">Email requis</span>
         <span *ngIf="email.errors?.email">Email invalide</span>
       </div>
-
+      <div>
+        <ion-item>
+          <ion-label>Profile</ion-label>
+          <ion-select placeholder="Select One">
+            <ion-select-option value="a">Agriculteur</ion-select-option>
+            <ion-select-option value="j">Jardinier</ion-select-option>
+            <ion-select-option value="ac">Acteur climat</ion-select-option>
+            <ion-select-option value="e">Environnementaliste</ion-select-option>
+            <ion-select-option value="ad">Administration publique</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
       <div class="form-input">
         <ion-icon name="lock-closed-outline"></ion-icon>
         <ion-item>
           <ion-label position="floating">Mot de passe</ion-label>
-          <ion-input
-            type="password"
-            formControlName="password"
-            clearInput="true">
+          <ion-input type="password" formControlName="password" clearInput="true">
           </ion-input>
         </ion-item>
       </div>
@@ -46,26 +49,23 @@
 
       <!-- Message d'alerte de saisie incorrecte -->
       <div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
-        <span *ngIf="password.errors?.required">Password requis</span>
+        <span *ngIf="password.errors?.required">Mot de passe requis</span>
         <span *ngIf="password.errors?.minlength">Le mot de passe doit comporter 6 caractères</span>
       </div>
       <div class="form-input">
         <ion-icon name="lock-closed-outline"></ion-icon>
         <ion-item>
           <ion-label position="floating">Confirmer mot de passe</ion-label>
-          <ion-input
-            type="password"
-            formControlName="confirmpassword"
-            clearInput="true">
+          <ion-input type="password" formControlName="confirmpassword" clearInput="true">
           </ion-input>
         </ion-item>
       </div>
 
     </form>
-    <strong>En vous connectant vous acceptez <a class="sign-up-link" routerLink="/conditions">les conditions générales d'utilisation</a></strong>
+    <!-- <p>En vous connectant vous acceptez <a class="sign-up-link" routerLink="/conditions">les conditions générales d'utilisation</a></p> -->
     <div class="action-buttons ion-padding">
-      <ion-button size="large" class="login-button" (click)="signUp()">S'inscrire</ion-button>
-      <ion-button class="signup-button" size="large" routerLink="/login">Retour à la connexion</ion-button>
+      <ion-button size="medium" class="login-button" (click)="signUp()">S'inscrire</ion-button>
+      <ion-button class="signup-button" size="medium" routerLink="/login">Retour à la connexion</ion-button>
     </div>
 
     <!--ion-button (click)="signUp()" expand="full">Sign up</ion-button>

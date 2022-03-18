@@ -29,13 +29,13 @@
     <ion-grid>
       <ion-row class="btnRow ion-align-items-center">
 
-        <ion-chip *ngIf="post.type==='conseil'" size="small">
+        <ion-chip *ngIf="post.type==='climat'" size="small">
           <ion-icon name="partly-sunny-outline" color="primary"></ion-icon>
-          <ion-label>Conseil Climat</ion-label>
+          <ion-label>climat</ion-label>
         </ion-chip>
-        <ion-chip *ngIf="post.type==='information'" size="small">
+        <ion-chip *ngIf="post.type==='conseil'" size="small">
           <ion-icon name="information-circle-outline" color="success"></ion-icon>
-          <ion-label>Information</ion-label>
+          <ion-label>Conseil</ion-label>
         </ion-chip>
         <ion-chip *ngIf="post.type==='question'" size="small">
           <ion-icon name="help-circle-outline" color="warning"></ion-icon>

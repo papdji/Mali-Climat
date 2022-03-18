@@ -26,13 +26,13 @@
 <ion-footer>
   <ion-toolbar>
     <ion-row class="ion-align-items-center">
-      <ion-col size="10">
+      <ion-col size="8">
         <ion-textarea autoGrow="true" class="message-input" rows="1" maxLenght="1000" [(ngModel)]="newMsg" placeholder="Ecrire ici..">
         </ion-textarea>
       </ion-col>
       <ion-col size="2">
-        <ion-button expand="block"  [disabled]="newMsg === ''" class="msg-btn" (click)="sendMessage()">
-          <ion-icon name="send"></ion-icon>
+        <ion-button [disabled]="newMsg === ''" class="msg-btn" (click)="sendMessage()">
+          <ion-icon  color="success" name="send"></ion-icon>
         </ion-button>
       </ion-col>
     </ion-row>

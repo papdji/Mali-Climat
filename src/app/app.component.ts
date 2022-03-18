@@ -1,4 +1,5 @@
 import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { MenuController, Platform } from '@ionic/angular';
 
 @Component({
@@ -15,6 +16,7 @@ export class AppComponent {
     { title: 'Condition', url: '/conditions', icon: 'folder' },
     { title: 'A propos', url: '/abouts', icon: 'stats-chart' },
     { title: 'Confidentialité', url: '/confidentialites', icon: 'create' },
+    // { title: 'Localités', url: '/localites', icon: 'create' },
   ];
   NO_ERRORS_SCHEMA: any;
   public labels = ['Test'];
@@ -22,7 +24,15 @@ export class AppComponent {
   public dark = false;
 
   constructor(private platform: Platform,
-    private menu: MenuController,) {}
+    private menu: MenuController,
+    private afAuth:AngularFireAuth) {
+      this.afAuth.onAuthStateChanged(user => {
+        console.log('Changed: ', user);
+        this.currentUser = user;
+        localStorage.setItem("user", JSON.stringify(this.currentUser));
+      });
+    }
+
     public closeMenu(){
       this.menu.close();
     }

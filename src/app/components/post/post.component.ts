@@ -26,13 +26,13 @@ export class PostComponent implements OnInit {
 
   checkPostImage() {
     switch ( this.post.type ) {
-      case 'information':
+      case 'conseil':
         this.postImage = './assets/undraw_Problem_solving_re_4gq3.svg';
         break;
       case 'question':
         this.postImage = './assets/undraw_Questions_re_1fy7.svg';
         break;
-      case 'conseil':
+      case 'climat':
         this.postImage = 'https://firebasestorage.googleapis.com/v0/b/ionfire-d0376.appspot.com/o/images%2Fundraw_weather_d9t2%20(1).svg?alt=media&token=a62181a8-ba81-4aba-b825-1860a193592d';
         break;
       default:
