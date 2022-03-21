@@ -5,17 +5,12 @@
         <ion-col size="4">
           <ion-img [src]="postImage"></ion-img>
         </ion-col>
-        <ion-col size="8">
+        <ion-col size="6">
           <ion-row>
             <ion-text color="primary">
               <h1>{{ post.from }}</h1>
             </ion-text>
           </ion-row>
-          <!--ion-row>
-            <ion-text color="secondary">
-              <h2>Engineering Specialist</h2>
-            </ion-text>
-          </ion-row-->
           <ion-row>
             <ion-text color="secondary">
               <small>{{ post.createdAt?.toMillis() | date:'short' }}</small>
@@ -25,7 +20,11 @@
 
       </ion-row>
     </ion-grid>
-
+    <ion-row>
+      <ion-text color="secondary">
+        <h2>{{ post.ville }}</h2>
+      </ion-text>
+    </ion-row>
     <ion-grid>
       <ion-row class="btnRow ion-align-items-center">
 
@@ -103,12 +102,11 @@
       </div>
     </ion-list>
 
-    <ion-item-divider></ion-item-divider>
+    <!-- <ion-item-divider></ion-item-divider> -->
 
     <ion-grid>
 
       <ion-row class="btnRow">
-
 
         <ion-col size="4" class="ion-align-self-center">
           <ion-button fill="clear" (click)="togglePostLiked()" color="primary">
@@ -122,7 +120,7 @@
         </ion-col>
 
         <ion-col size="4" class="ion-align-self-center">
-          <ion-button (click)="toggleViewComments()" color="success">
+          <ion-button fill="clear" (click)="toggleViewComments()" color="success">
             <ion-icon name="chatbox-ellipses-outline" slot="icon-only"></ion-icon>
           </ion-button>
         </ion-col>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { ChatService } from 'src/app/services/chat.service';
 
@@ -12,13 +12,15 @@ import { ChatService } from 'src/app/services/chat.service';
 })
 export class SignupPage implements OnInit {
   credentialForm: FormGroup;
+  myToast: any;
 
   constructor(private fb: FormBuilder,
               private router: Router,
               private alertController: AlertController,
               private loadingController: LoadingController,
               private authService: AuthService,
-              private chatService: ChatService) { }
+              private chatService: ChatService,
+              public toast: ToastController) { }
 
   ngOnInit() {
     this.credentialForm = this.fb.group({
@@ -27,10 +29,23 @@ export class SignupPage implements OnInit {
       confirmpassword: ['', Validators.required]
     });
   }
+  showToast() {
+    this.myToast = this.toast.create({
+      message: 'Vous étes connecter avec succès',
+      duration: 2000
+    }).then((toastData) => {
+      console.log(toastData);
+      toastData.present();
+    });
+  }
+  HideToast() {
+    this.myToast = this.toast.dismiss();
+  }
 
   async signUp() {
     const loading = await this.loadingController.create();
     await loading.present();
+
 
     if ( this.password.value !== this.confirmpassword.value ){
       console.log('Error: Les mots de passe ne correspondent pas !');
@@ -55,6 +70,7 @@ export class SignupPage implements OnInit {
         });
         await alert.present();
       });
+
     }
   }
 

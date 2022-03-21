@@ -1,8 +1,7 @@
-// ion-content {
-//     --background: linear-gradient(0deg, rgba(0, 0, 0, 0.151),  rgba(255, 255, 255, 0.1)),
-//     url("https://firebasestorage.googleapis.com/v0/b/ionfire-d0376.appspot.com/o/images%2Fbackground.jpg?alt=media&token=ad5bace5-c863-4b07-833b-3729c14a4301") no-repeat center center / cover;
-// }
+ion-content {
+  --background: linear-gradient(0deg, rgb(0, 0, 0),  rgb(0, 0, 0));
 
+}
 
 .errors {
     font-size: small;
@@ -20,10 +19,10 @@ ion-img {
 }
 
 .login-section {
-    height: 85vh;
+    height: 80vh;
     width: 100%;
     max-width: 500px;
-    background: rgb(185, 182, 182);
+    background: rgb(11, 255, 2);
     right: 0;
     left: 0;
     bottom: 0;
@@ -36,15 +35,15 @@ ion-img {
     .heading {
         margin-top: 10px;
 
-        h5 {
+        h6 {
             font-size: 1.6rem;
             font-weight: bolder;
-            color: #010435;
+            color: #ffffff;
         }
         p {
             margin-top: 20px;
             font-size: 1rem;
-            color: #7b7b7b;
+            color: #ffffff;
         }
 
     }
@@ -74,25 +73,26 @@ ion-img {
                 font-size: 0.9rem;
                 --padding-start: 36px;
                 --padding-top: 36px;
-                color: #7b7b7b;
+                color: #000000;
             }
         }
     }
     .action-buttons {
-        text-align: center;
         .login-button {
-            --background: #00ad42;
+          --border-color: #ffd900;
+          --background: var(--border-color);
+          --color: #ffffff;
             width: 100%;
             font-weight: bold;
         }
-        p {
-            margin-top: 15px;
-            font-size: 1rem;
-            color: #7b7b7b;
-        }
+        // p {
+        //     margin-top: 15px;
+        //     font-size: 1rem;
+        //     color: #ffffff;
+        // }
         .signup-button {
-          --border-color: #040835;
-          --background: var(--ion-color-primary);
+          --border-color: #000000;
+          --background: var(--border-color);
           --color: #ffffff;
           font-weight: bold;
           margin-top: 1px;

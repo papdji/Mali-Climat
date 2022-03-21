@@ -39,10 +39,10 @@ export class AuthService {
       `users/${uid}`
       ).set({
         uid,
-        profile:"utilisateur",
+        profile:"Utilisateur",
         email: credential.user.email,
         name: credential.user.email.split('@')[0],
-        image: 'notdefined'
+        image: ''
       });
   }
 
@@ -63,9 +63,9 @@ export class AuthService {
   getUserProfile()  {
     const observable = new Observable((observer) => {
       this.getCurrentUser().then( uid => {
-        // console.log('User UID: ', uid);
+        console.log('User UID: ', uid);
         this.afs.collection('users').doc(uid).valueChanges().subscribe( (profile: User) => {
-          if ( profile.image === 'notdefined') {
+          if ( profile.image === '') {
             profile.image = 'assets/undraw_male_avatar_323b.svg';
           }
           observer.next(profile);

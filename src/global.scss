@@ -26,7 +26,7 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 .my-custom-class {
-  --background: #222;
+  --background: rgb(248, 248, 248);
 }
 
 .new-post-modal{
@@ -35,7 +35,7 @@
     bottom: 0;
     min-height: initial;
     top: initial;
-    height: 50%;
+    height: 60%;
   }
 }
 .centerix {

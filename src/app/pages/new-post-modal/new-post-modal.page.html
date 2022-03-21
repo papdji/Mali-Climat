@@ -26,13 +26,9 @@
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Textarea avec un nombre personnalisé de lignes et de colonnes -->
-<ion-item>
-  <ion-textarea rows="6" cols="20" [(ngModel)]="newPostMsg" placeholder="Entrez plus d'informations pour publier ici..."></ion-textarea>
-</ion-item>
-<!-- <ion-item>
-  <ion-label>Choissez la localité</ion-label>
-  <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" [(ngModel)]="ville"(ionChange)="onSubmit()">
+  <ion-item>
+    <ion-label>Choissez la localité</ion-label>
+  <ion-select interface="action-sheet" cancelText="Annuler" name="ville" [(ngModel)]="ville" (ionChange)="villePostchanged($event)" value="localites">
     <ion-select-option value="Bamako">Bamako</ion-select-option>
     <ion-select-option value="Kayes">Kayes</ion-select-option>
     <ion-select-option value="Koulikoro">Koulikoro</ion-select-option>
@@ -49,8 +45,14 @@
     <ion-select-option value="Bougouni">Bougouni</ion-select-option>
     <ion-select-option value="Taoudeni">Taoudeni</ion-select-option>
   </ion-select>
-</ion-item> -->
+  </ion-item>
+
+  <!-- Textarea avec un nombre personnalisé de lignes et de colonnes -->
+<ion-item>
+  <ion-textarea rows="1" cols="6" [(ngModel)]="newPostMsg" placeholder="Entrez plus d'informations pour publier ici..."></ion-textarea>
+</ion-item>
+
 <ion-button expand="block" [disabled]="newPostMsg === ''" (click)="addNewPost()"
->Publier pour alimenter</ion-button>
+>Publier</ion-button>
 
 </ion-content>

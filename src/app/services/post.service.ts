@@ -18,6 +18,7 @@ export interface Post {
   from: string;
   msg: string;
   type: string;
+  ville: string;
   likes?: string[];
   userLikes?: boolean;
   comments?: Comment[];
@@ -40,6 +41,7 @@ export interface Comment {
 export class PostService {
   currentUser: User = null;
   typeOfPost: string = null;
+  villeOfPost: string =null;
 
   users: User[];
 
@@ -51,11 +53,12 @@ export class PostService {
                 });
   }
 
-  addPostMessage(msg, type) {
+  addPostMessage(msg, type, ville) {
     return this.afs.collection('posts').add({
       msg: {msg}.msg,
       from: this.currentUser.uid,
       type: {type}.type,
+      ville: {ville}.ville,
       createdAt: firebase.default.firestore.FieldValue.serverTimestamp()
     });
   }

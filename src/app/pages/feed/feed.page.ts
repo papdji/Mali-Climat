@@ -27,7 +27,7 @@ export class FeedPage implements OnInit {
 
           this.userData = data;
           console.log(data);
-          if(this.userData.profile == "Admin"){
+          if(this.userData.profile == "Acteur climat"){
             this.currentUser = true;
           }
         })

@@ -9,8 +9,9 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./new-post-modal.page.scss'],
 })
 export class NewPostModalPage implements OnInit {
-  typeOfPost = 'information';
+  typeOfPost = 'climat';
   newPostMsg = '';
+  villeOfPost = '';
 
   constructor(
     public modalController: ModalController,
@@ -41,9 +42,13 @@ export class NewPostModalPage implements OnInit {
     this.typeOfPost = $event.detail.value;
     console.log('Type of Post: ', $event.detail.value);
   }
+  villePostchanged($event) {
+    this.villeOfPost = $event.detail.value;
+    console.log('Ville Of Post: ', $event.detail.value);
+  }
 
   addNewPost(){
-    this.postService.addPostMessage(this.newPostMsg, this.typeOfPost).then(() => {
+    this.postService.addPostMessage(this.newPostMsg, this.typeOfPost, this.villeOfPost).then(() => {
       this.newPostMsg = '';
       this.dismissModal();
     });
