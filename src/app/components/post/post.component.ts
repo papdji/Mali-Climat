@@ -9,8 +9,11 @@ import { Post, PostService } from 'src/app/services/post.service';
   styleUrls: ['./post.component.scss'],
 })
 export class PostComponent implements OnInit {
+  slideOpts = {
+    speed: 500
+  };
 
-  postImage: string = null;
+  postImage: string;
   newVille = '';
   viewComments = false;
   newMsg = '';
@@ -39,7 +42,7 @@ export class PostComponent implements OnInit {
   checkPostImage() {
     switch ( this.post.type, this.post.ville ) {
       case 'conseil':
-        this.postImage = './assets/undraw_Problem_solving_re_4gq3.svg';
+        this.postImage = 'https://firebasestorage.googleapis.com/v0/b/ionfire-d0376.appspot.com/o/images%2Fundraw_Data_trends_re_2cdy.svg?alt=media&token=556fdf28-d045-4dff-a43d-564b1f2eab07';
         break;
       case 'question':
         this.postImage = './assets/undraw_Questions_re_1fy7.svg';

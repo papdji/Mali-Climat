@@ -9,7 +9,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./new-post-modal.page.scss'],
 })
 export class NewPostModalPage implements OnInit {
-  typeOfPost = 'climat';
+  typeOfPost = '';
   newPostMsg = '';
   villeOfPost = '';
 

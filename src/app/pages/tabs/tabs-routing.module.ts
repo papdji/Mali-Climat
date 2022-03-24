@@ -16,8 +16,8 @@ const routes: Routes = [
         loadChildren: () => import('../chat/chat.module').then(m => m.ChatPageModule)
       },
       {
-        path: 'files',
-        loadChildren: () => import('../files/files.module').then(m => m.FilesPageModule)
+        path: 'localites',
+        loadChildren: () => import('../localites/localites.module').then(m => m.LocalitesPageModule)
       },
       {
         path: 'current',

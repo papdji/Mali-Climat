@@ -13,7 +13,8 @@ import { LocalitesPage } from './localites.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    LocalitesPageRoutingModule
+    LocalitesPageRoutingModule,
+    
   ],
   declarations: [LocalitesPage]
 })
